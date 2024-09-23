@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * A specific implementation of the CSVWriter class, responsible for converting objects to CSV format.
  *
- * <p>Uses the settings defined in the CSVWriter base class and implements the getCSVString method.</p>
+ * <p>Uses the settings defined in the CSVWriter base class and implements the methods.</p>
  *
  * @since 1.0
  */
