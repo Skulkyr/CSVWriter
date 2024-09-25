@@ -24,16 +24,16 @@ import java.util.Collection;
  *
  * @since 1.0
  */
-@SuppressWarnings("all")
+
 public abstract class CSVWriter {
 
-   boolean declared = true;
-   Byte maxDepth = 0;
-   boolean allowArrays = false;
-   String arrayDelimiter = "|";
-   String columnDelimiter = ",";
-   boolean ignoreOtherType = true;
-   String recursionDelimiter = ".";
+   protected boolean declared = true;
+   protected Byte maxDepth = 0;
+   protected boolean allowArrays = false;
+   protected String arrayDelimiter = "|";
+   protected String columnDelimiter = ",";
+   protected boolean ignoreOtherType = true;
+   protected String recursionDelimiter = ".";
 
    /**
     * Writes a collection of objects to a CSV file.
