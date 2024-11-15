@@ -1,0 +1,46 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+group = 'org.pogonin'
+version = '1.0'
+description = 'CSVWriter'
+java.sourceCompatibility = JavaVersion.VERSION_22
+
+publishing {
+    publications {
+        create("CSVWriter", MavenPublication) {
+            from(components.java)
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'myRepo'
+            url = layout.buildDirectory.dir("repo")
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.encoding = 'UTF-8'
+}
